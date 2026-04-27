@@ -38,6 +38,8 @@ export default function Footer() {
             <Link href="/case-studies">Case Studies</Link>
             <br />
             <Link href="/reviews">Reviews</Link>
+            <br />
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
 

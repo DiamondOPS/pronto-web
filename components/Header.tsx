@@ -8,6 +8,7 @@ const navItems = [
   { href: "/areas-we-cover", label: "Areas We Cover" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/reviews", label: "Reviews" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
