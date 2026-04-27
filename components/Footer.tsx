@@ -33,6 +33,8 @@ export default function Footer() {
             <br />
             <Link href="/how-it-works">How It Works</Link>
             <br />
+            <Link href="/areas-we-cover">Areas We Cover</Link>
+            <br />
             <Link href="/case-studies">Case Studies</Link>
             <br />
             <Link href="/reviews">Reviews</Link>
@@ -46,11 +48,11 @@ export default function Footer() {
           <div className="mt-4 space-y-3 text-sm text-slate-300">
             <Link href="/sell-my-house-fast">Sell My House Fast</Link>
             <br />
-            <span>Inherited Property</span>
+            <Link href="/inherited-property">Inherited Property</Link>
             <br />
-            <span>Mortgage Arrears</span>
+            <Link href="/mortgage-arrears">Mortgage Arrears</Link>
             <br />
-            <span>House Needs Work</span>
+            <Link href="/house-needs-work">House Needs Work</Link>
           </div>
         </div>
 

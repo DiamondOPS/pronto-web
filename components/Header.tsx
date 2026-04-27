@@ -5,6 +5,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/sell-my-house-fast", label: "Sell My House Fast" },
   { href: "/how-it-works", label: "How It Works" },
+  { href: "/areas-we-cover", label: "Areas We Cover" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/reviews", label: "Reviews" },
 ];
@@ -48,12 +49,12 @@ export default function Header() {
             0151 909 2777
           </a>
 
-          <button
-            type="button"
+          <Link
+            href="/contact"
             className="inline-flex h-11 items-center justify-center rounded-2xl bg-amber-500 px-5 text-sm font-semibold text-slate-950 transition hover:bg-amber-400"
           >
             Get Offer
-          </button>
+          </Link>
         </div>
 
         <button
