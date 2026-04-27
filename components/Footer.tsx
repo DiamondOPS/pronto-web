@@ -39,6 +39,8 @@ export default function Footer() {
             <br />
             <Link href="/reviews">Reviews</Link>
             <br />
+            <Link href="/faqs">FAQs</Link>
+            <br />
             <Link href="/contact">Contact</Link>
           </div>
         </div>
