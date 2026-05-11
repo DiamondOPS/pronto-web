@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import {
   ArrowRight,
   BadgeCheck,
@@ -196,6 +197,18 @@ function ContactButtons({ dark = false }: { dark?: boolean }) {
   );
 }
 
+async function startOffer(formData: FormData) {
+  "use server";
+
+  const postcode = String(formData.get("postcode") || "").trim();
+
+  if (!postcode) {
+    redirect("/contact");
+  }
+
+  redirect(`/contact?postcode=${encodeURIComponent(postcode)}`);
+}
+
 export default function HomePage() {
   return (
     <main className="bg-white text-slate-900">
@@ -240,9 +253,15 @@ export default function HomePage() {
               A simple alternative to the open market. No fees, no repairs, no viewings, and completion possible in as little as 14 days.
             </p>
 
-            <form className="mx-auto mt-8 flex max-w-xl flex-col gap-3 rounded-3xl border border-sky-300 bg-white p-4 shadow-2xl shadow-sky-300/40 ring-1 ring-white sm:flex-row sm:items-center">
+            <form
+              action={startOffer}
+              className="mx-auto mt-8 flex max-w-xl flex-col gap-3 rounded-3xl border border-sky-300 bg-white p-4 shadow-2xl shadow-sky-300/40 ring-1 ring-white sm:flex-row sm:items-center"
+            >
               <input
                 type="text"
+                name="postcode"
+                autoComplete="postal-code"
+                required
                 placeholder="Enter your postcode"
                 className="h-12 min-w-0 flex-1 rounded-2xl border border-sky-200 bg-white px-4 text-center text-base font-semibold text-slate-900 outline-none placeholder:text-slate-400 focus:border-sky-500 sm:text-left"
               />
