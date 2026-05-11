@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Phone } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
+import { useState } from "react";
 
 const navItems = [
   { href: "/sell-my-house-fast", label: "Sell Fast" },
@@ -15,6 +18,12 @@ const whatsappHref =
   "https://wa.me/447771252634?text=Hi%2C%20I%27d%20like%20a%20cash%20offer%20for%20my%20house.";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
       <div className="bg-sky-50 px-4 py-2 text-center text-xs font-semibold text-slate-700 sm:text-sm">
@@ -26,6 +35,7 @@ export default function Header() {
           href="/"
           className="flex shrink-0 items-center"
           aria-label="Pronto House Buyer home"
+          onClick={closeMenu}
         >
           <Image
             src="/images/logo.png"
@@ -87,19 +97,59 @@ export default function Header() {
           <Link
             href="/contact"
             className="inline-flex h-11 items-center justify-center rounded-xl bg-sky-600 px-4 text-sm font-bold text-white shadow-sm shadow-sky-600/20 transition hover:bg-sky-500"
+            onClick={closeMenu}
           >
             Offer
           </Link>
 
           <button
             type="button"
+            onClick={() => setMenuOpen((current) => !current)}
             className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-sm"
-            aria-label="Open menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
           >
-            <Menu className="h-5 w-5" />
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
+
+      {menuOpen && (
+        <div className="border-t border-slate-200 bg-white px-4 pb-5 pt-2 shadow-xl lg:hidden">
+          <nav className="mx-auto grid max-w-7xl gap-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                className="rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-sky-50 hover:text-sky-700"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="mx-auto mt-4 grid max-w-7xl gap-3 sm:grid-cols-2">
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-emerald-600 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500"
+            >
+              WhatsApp
+            </a>
+
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-sky-600 px-6 text-sm font-bold text-white shadow-sm shadow-sky-600/20 transition hover:bg-sky-500"
+            >
+              Get Cash Offer
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

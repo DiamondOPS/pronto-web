@@ -1,6 +1,5 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/27558213/4ysfbn1/";
 
 const recipients = [
@@ -218,6 +217,17 @@ Quick sale expectation: ${clean(payload.quickSaleExpectation)}
 
 export async function POST(request: Request) {
   try {
+    const resendApiKey = process.env.RESEND_API_KEY;
+
+    if (!resendApiKey) {
+      console.error("Missing RESEND_API_KEY environment variable");
+      return Response.json(
+        { success: false, error: "Email service is not configured" },
+        { status: 500 },
+      );
+    }
+
+    const resend = new Resend(resendApiKey);
     const payload = await getPayload(request);
     const { fullName, enquiryType, html, text } = buildEmail(payload);
 
