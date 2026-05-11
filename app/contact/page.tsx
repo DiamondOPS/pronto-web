@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, KeyboardEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, KeyboardEvent, Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 const whatsappHref =
@@ -660,7 +660,15 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-12">
-            <ContactFunnel />
+            <Suspense
+              fallback={
+                <div className="mx-auto w-full max-w-6xl rounded-3xl bg-white p-6 text-[#1E293B] shadow-2xl ring-1 ring-white/20 md:p-8">
+                  Loading form...
+                </div>
+              }
+            >
+              <ContactFunnel />
+            </Suspense>
           </div>
         </div>
       </section>
