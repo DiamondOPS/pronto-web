@@ -150,25 +150,25 @@ const reasons = [
 
 const sellerConcerns = [
   {
-    title: "I do not want lots of viewings",
-    text: "We buy directly, so you avoid repeated appointments, public listing pressure, and waiting for feedback from buyers who may not proceed.",
+    title: "No public listing",
+    text: "You do not need to put the property online, hold repeated viewings, or wait for feedback from uncertain buyers.",
   },
   {
-    title: "The house needs work",
-    text: "You can sell the property as it stands. We will factor the condition into the offer, so you do not need to spend money first.",
+    title: "No repair work first",
+    text: "We consider properties as they stand, including homes that need clearing, updating, damp work, roofing, or refurbishment.",
   },
   {
-    title: "I need a reliable timescale",
-    text: "A cash sale can remove many of the delays caused by mortgage buyers, chains, surveys, and last-minute renegotiations.",
+    title: "No chain uncertainty",
+    text: "A direct cash sale avoids the delays caused by mortgage buyers, chains, surveys, and last-minute renegotiations.",
   },
 ];
 
 function ContactButtons({ dark = false }: { dark?: boolean }) {
   return (
-    <div className="grid gap-3 sm:grid-cols-3">
+    <div className="grid gap-2 sm:grid-cols-3">
       <Link
         href="/contact"
-        className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-sky-500 px-4 py-3 text-center text-sm font-semibold leading-5 text-white shadow-sm transition hover:bg-sky-400"
+        className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-sky-500 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white shadow-sm transition hover:bg-sky-400"
       >
         Get a Cash Offer
       </Link>
@@ -176,14 +176,14 @@ function ContactButtons({ dark = false }: { dark?: boolean }) {
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-4 py-3 text-center text-sm font-semibold leading-5 text-white shadow-sm transition hover:bg-emerald-500"
+        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white shadow-sm transition hover:bg-emerald-500"
       >
         <MessageCircle className="h-4 w-4" />
         WhatsApp Us
       </a>
       <a
         href={phoneHref}
-        className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border px-4 py-3 text-center text-sm font-semibold leading-5 transition ${
+        className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border px-4 py-2.5 text-center text-sm font-semibold leading-5 transition ${
           dark
             ? "border-white/25 text-white hover:bg-white/10"
             : "border-sky-200 bg-white text-slate-900 hover:bg-sky-50"
@@ -297,46 +297,46 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-4 px-4 py-6 sm:grid-cols-2 sm:px-6 lg:grid-cols-5 lg:px-8">
+      <section className="border-y border-sky-100 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-3 px-4 py-5 sm:grid-cols-2 sm:px-6 lg:grid-cols-5 lg:px-8">
           {[
-            "Genuine cash buyer",
-            "Liverpool & Wirral specialists",
-            "No fees or commissions",
-            "Sell in any condition",
+            "Cash offer within 24 hours",
+            "Liverpool & Wirral focused",
+            "No fees or commission",
+            "Any condition considered",
             "Completion possible from 14 days",
           ].map((item) => (
             <div
               key={item}
-              className="rounded-2xl border border-sky-100 bg-sky-50/80 px-4 py-4 text-center text-sm font-semibold text-slate-800 shadow-sm"
+              className="flex min-h-14 items-center justify-center gap-2 rounded-full border border-sky-100 bg-[#F7FCFF] px-4 py-3 text-center text-sm font-bold text-slate-800 shadow-sm"
             >
-              {item}
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-sky-500" />
+              <span>{item}</span>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-              Local house buying service
+              Sell without the open-market delays
             </div>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              A practical alternative to waiting months on the open market
+              A faster way to sell when the usual route does not suit you
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-600">
-              A normal estate agency sale can work, but it is not always the
-              right fit. If the property needs repairs, the situation is urgent,
-              the house is empty, or you simply do not want viewings, a direct
-              cash sale can be cleaner and faster.
+              Estate agents can be useful when you have time to wait. But if you
+              need a certain buyer, a clearer timescale, or a sale without repairs
+              and repeated viewings, a direct cash offer is often the simpler route.
             </p>
             <p className="mt-4 text-base leading-8 text-slate-600">
-              We make the process simple: you tell us about the property, we
-              assess it properly, and you receive a clear offer. There is no
-              pressure to accept, and there are no fees for getting an offer.
+              Tell us where the property is and what condition it is in. We will
+              review it properly and give you a clear, no-obligation answer before
+              you decide what to do next.
             </p>
-            <div className="mt-7">
+            <div className="mt-5">
               <ContactButtons />
             </div>
           </div>
@@ -360,51 +360,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-sky-50/70">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-              Who we help
-            </div>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              We buy houses in all situations
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              Every box links to a dedicated guide for that situation. Choose the
-              one that matches your property sale and see exactly how we can help.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {situations.map((item) => {
-              const Icon = item.icon;
-              return (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  className="group rounded-3xl border border-sky-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg hover:shadow-sky-100/80"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-50 transition group-hover:bg-sky-100">
-                    <Icon className="h-6 w-6 text-sky-600" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-bold text-slate-950">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    {item.text}
-                  </p>
-                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sky-700">
-                    Read the guide
-                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] lg:items-start">
             <div>
               <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
@@ -419,7 +375,7 @@ export default function HomePage() {
                 chain to complete.
               </p>
 
-              <div className="mt-10 grid gap-6 md:grid-cols-3">
+              <div className="mt-8 md:mt-10 grid gap-6 md:grid-cols-3">
                 {steps.map((step) => (
                   <div
                     key={step.number}
@@ -462,129 +418,138 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-sky-600 px-4 py-12 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 lg:flex-row lg:items-center">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight">
-              Want to check if your house qualifies?
-            </h2>
-            <p className="mt-3 max-w-2xl text-sky-50">
-              Send the postcode on WhatsApp, call us, or use the contact form.
-              We will tell you what is realistic before you make any decision.
-            </p>
-          </div>
-          <ContactButtons dark />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-          <div>
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
             <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-              Why sell to Pronto
+              Who we help
             </div>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              Best for speed, privacy and certainty
+              We buy houses in all situations
             </h2>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
-              Estate agency can work well when you have time, money for repairs,
-              and patience for viewings. Pronto is built for sellers who value a
-              certain buyer, a clear offer, and a faster route to completion.
+            <p className="mt-4 text-lg text-slate-600">
+              Every box links to a dedicated guide for that situation. Choose the
+              one that matches your property sale and see exactly how we can help.
             </p>
-
-            <div className="mt-8 overflow-hidden rounded-3xl border border-sky-100 shadow-sm">
-              <div className="grid grid-cols-3 bg-slate-900 text-sm font-semibold text-white">
-                <div className="px-4 py-4">Feature</div>
-                <div className="bg-sky-500 px-4 py-4 text-white">Pronto</div>
-                <div className="px-4 py-4">Estate Agent</div>
-              </div>
-
-              {[
-                ["Speed", "As fast as 14 days", "3–6 months+"],
-                ["Certainty", "No chain", "Sale can fall through"],
-                ["Fees", "No fees or commissions", "Agency fees apply"],
-                ["Repairs", "Sell as-is", "Usually expected"],
-                ["Viewings", "None", "Multiple viewings"],
-              ].map(([feature, pronto, agent]) => (
-                <div
-                  key={feature}
-                  className="grid grid-cols-3 border-t border-sky-100 text-sm"
-                >
-                  <div className="bg-white px-4 py-4 font-medium text-slate-800">
-                    {feature}
-                  </div>
-                  <div className="bg-sky-50 px-4 py-4 text-sky-800">
-                    {pronto}
-                  </div>
-                  <div className="bg-white px-4 py-4 text-slate-600">
-                    {agent}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
-          <div className="rounded-[2rem] border border-sky-100 bg-sky-50/70 p-6 sm:p-8">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm">
-              <Star className="h-7 w-7 text-sky-500" />
-            </div>
-            <h3 className="mt-6 text-2xl font-bold text-slate-950">
-              A local buyer you can speak to
-            </h3>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              We are not listing your property and hoping for a buyer. We buy
-              directly, which means less stress, fewer delays, and more control
-              over your sale.
-            </p>
-
-            <div className="mt-6 space-y-3">
-              {[
-                "Liverpool & Wirral focused",
-                "No hidden costs",
-                "Straightforward communication",
-                "Sell in any condition",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 text-sm font-medium text-slate-800"
-                >
-                  <CheckCircle2 className="h-5 w-5 text-sky-500" />
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8">
-              <div className="grid gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-sky-500 px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-sky-400"
-                >
-                  Get a Cash Offer
-                </Link>
+          <div className="mt-8 md:mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {situations.map((item) => {
+              const Icon = item.icon;
+              return (
                 <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500"
+                  key={item.title}
+                  href={item.href}
+                  className="group rounded-3xl border border-sky-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg hover:shadow-sky-100/80"
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  WhatsApp Us
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-50 transition group-hover:bg-sky-100">
+                    <Icon className="h-6 w-6 text-sky-600" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {item.text}
+                  </p>
+                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sky-700">
+                    Read the guide
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </div>
                 </a>
-                <a
-                  href={phoneHref}
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-sky-200 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-sky-50"
-                >
-                  <Phone className="h-4 w-4 text-sky-500" />
-                  <span className="whitespace-nowrap">{phoneNumber}</span>
-                </a>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-900 px-4 py-16 text-white sm:px-6 lg:px-8">
+      <section className="bg-[#EEF9FF] px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+          <div>
+            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
+              Quick local offer
+            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+              Want to check if your house qualifies?
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
+              Send the postcode and a few details. We will tell you quickly if a direct cash offer is realistic for your property.
+            </p>
+          </div>
+
+          <div className="rounded-[1.5rem] bg-white p-4 shadow-sm ring-1 ring-sky-100">
+            <ContactButtons />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
+            Compare your options
+          </div>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            See what a direct cash sale can save you
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            Estate agency can work well when time is not an issue. A direct sale gives you a clearer route, fewer deductions, and less uncertainty.
+          </p>
+        </div>
+
+        <div className="mt-8 md:mt-10 overflow-hidden rounded-[2rem] border border-sky-100 bg-white shadow-sm">
+          <div className="grid grid-cols-[1.1fr_1fr_1fr] text-sm font-bold sm:text-base">
+            <div className="bg-white px-4 py-5 text-slate-900 sm:px-6" />
+            <div className="bg-slate-50 px-4 py-5 text-center text-slate-900 sm:px-6">
+              Estate Agent
+            </div>
+            <div className="bg-[#063746] px-4 py-5 text-center text-white sm:px-6">
+              Pronto House Buyer
+            </div>
+          </div>
+
+          {[
+            ["Time to sell", "3–6 months+", "As little as 14 days"],
+            ["Estate agent fees", "Usually payable", "No estate agent fees"],
+            ["Repairs before sale", "Often expected", "Not needed"],
+            ["Viewings", "Repeated viewings", "No public viewings"],
+            ["Buyer chain", "Can collapse", "No chain"],
+            ["Survey renegotiation", "Common risk", "Reduced risk"],
+            ["Certainty", "Can fall through", "Clear direct buyer"],
+          ].map(([label, agent, pronto]) => (
+            <div
+              key={label}
+              className="grid grid-cols-[1.1fr_1fr_1fr] border-t border-sky-100 text-sm sm:text-base"
+            >
+              <div className="bg-white px-4 py-5 font-semibold text-slate-800 sm:px-6">
+                {label}
+              </div>
+              <div className="bg-slate-50 px-4 py-5 text-center font-semibold text-slate-600 sm:px-6">
+                {agent}
+              </div>
+              <div className="bg-[#063746] px-4 py-5 text-center font-bold text-white sm:px-6">
+                {pronto}
+              </div>
+            </div>
+          ))}
+
+          <div className="grid grid-cols-[1.1fr_1fr_1fr] border-t border-sky-100 text-sm sm:text-base">
+            <div className="bg-white px-4 py-5 font-black text-slate-950 sm:px-6">
+              Best fit
+            </div>
+            <div className="bg-slate-50 px-4 py-5 text-center font-semibold text-slate-600 sm:px-6">
+              Sellers with time to wait
+            </div>
+            <div className="bg-[#10B981] px-4 py-5 text-center font-black text-white sm:px-6">
+              Sellers who want speed and certainty
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-8 max-w-2xl">
+          <ContactButtons />
+        </div>
+      </section>
+
+      <section className="bg-slate-900 px-4 py-12 md:py-16 text-white sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">
@@ -625,7 +590,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
@@ -667,7 +632,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-sky-50/70">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
@@ -687,7 +652,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-8 md:mt-10 grid gap-6 lg:grid-cols-3">
             {caseStudies.map((item) => (
               <div
                 key={item.title}
@@ -727,7 +692,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
@@ -744,7 +709,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 md:mt-10 grid gap-6 lg:grid-cols-3">
           {reviews.map((review) => (
             <div
               key={review.quote}
@@ -768,7 +733,7 @@ export default function HomePage() {
 
 
       <section className="bg-slate-900">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-10 sm:px-6 md:py-12 lg:flex-row lg:items-center lg:px-8">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Ready to sell your house fast?
