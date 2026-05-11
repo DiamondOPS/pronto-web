@@ -52,11 +52,11 @@ export default function Footer() {
           <div className="mt-8">
             <p className="text-lg font-semibold text-white">Office:</p>
             <a
-              href="tel:01519092777"
+              href="tel:01512037172"
               className="mt-2 inline-flex items-center gap-3 text-3xl font-black tracking-tight text-white transition hover:text-[#10A7E8]"
             >
               <Phone className="h-7 w-7 text-[#10A7E8]" />
-              0151 909 2777
+              0151 203 7172
             </a>
           </div>
 
@@ -102,7 +102,10 @@ export default function Footer() {
       <div className="relative mx-auto flex max-w-7xl flex-col gap-4 px-6 pb-10 text-xs leading-6 text-white/80 lg:flex-row lg:items-end lg:justify-between lg:px-8">
         <div className="max-w-3xl">
           <p>
-            Dundee Group (NI) Ltd. Company No. NI618194. Trading since 2010.
+            Jazmine Hazel Grove Ltd. Registered office: Level One, Basecamp Liverpool, 49 Jamaica Street, Liverpool, England, L1 0AH.
+          </p>
+          <p className="mt-2">
+            Website: prontohousebuyer.co.uk · Email: enquiries@prontohousebuyer.co.uk · Phone: 0151 203 7172.
           </p>
           <p className="mt-2">
             Pronto House Buyer is a local cash house buyer service covering Liverpool, Wirral and surrounding areas.

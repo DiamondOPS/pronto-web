@@ -10,8 +10,8 @@ const contactOptions = [
   {
     title: "Call us",
     description: "Speak directly with the team about your property and timescale.",
-    action: "0151 909 2777",
-    href: "tel:01519092777",
+    action: "0151 203 7172",
+    href: "tel:01512037172",
   },
   {
     title: "WhatsApp us",
@@ -344,7 +344,7 @@ function ContactFunnel() {
       id="offer-form"
       onSubmit={submitLead}
       onKeyDown={preventEnterSkip}
-      className="mx-auto w-full max-w-6xl rounded-3xl bg-white p-6 text-[#1E293B] shadow-2xl ring-1 ring-white/20 md:p-8"
+      className="mx-auto w-full max-w-6xl rounded-3xl bg-white p-5 text-[#1E293B] shadow-2xl ring-1 ring-white/20 sm:p-6 md:p-8"
     >
       <div className="flex items-center justify-between gap-4">
         <div>
@@ -367,7 +367,7 @@ function ContactFunnel() {
         />
       </div>
 
-      <div className="mt-7 min-h-[320px] transition-all duration-300">
+      <div className="mt-6 min-h-[300px] transition-all duration-300 md:mt-7 md:min-h-[320px]">
         {step === 0 && (
           <div>
             <h3 className="text-2xl font-bold text-[#071A2F]">
@@ -391,9 +391,10 @@ function ContactFunnel() {
               <button
                 type="button"
                 onClick={lookupPostcode}
-                className="rounded-xl bg-[#0073E6] px-6 py-3 font-semibold text-white transition hover:bg-[#005fc2]"
+                disabled={lookupStatus === "loading"}
+                className="rounded-xl bg-[#0073E6] px-6 py-3 font-semibold text-white transition hover:bg-[#005fc2] disabled:cursor-wait disabled:opacity-70"
               >
-                {lookupStatus === "loading" ? "Finding..." : "Find address"}
+                {lookupStatus === "loading" ? "Finding address..." : "Find address"}
               </button>
             </div>
 
@@ -598,7 +599,7 @@ function ContactFunnel() {
         </p>
       )}
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-[auto_1fr]">
+      <div className="sticky bottom-3 z-10 mt-6 grid gap-3 rounded-2xl bg-white/95 pt-3 backdrop-blur sm:static sm:grid-cols-[auto_1fr] sm:bg-transparent sm:pt-0 sm:backdrop-blur-0">
         {step > 0 && (
           <button
             type="button"
@@ -744,10 +745,10 @@ export default function ContactPage() {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a
-            href="tel:01519092777"
+            href="tel:01512037172"
             className="inline-flex items-center justify-center rounded-xl bg-[#10A7E8] px-6 py-3 font-semibold text-white transition hover:bg-[#078fd0]"
           >
-            Call 0151 909 2777
+            Call 0151 203 7172
           </a>
           <a
             href={whatsappHref}

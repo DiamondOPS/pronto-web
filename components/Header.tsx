@@ -23,6 +23,7 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
+    setMenuOpen(false);
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [pathname]);
 
@@ -49,7 +50,7 @@ export default function Header() {
             width={210}
             height={64}
             priority
-            className="h-auto w-[150px] sm:w-[175px] lg:w-[200px]"
+            className="h-auto w-[150px] object-contain sm:w-[175px] lg:w-[200px]"
           />
         </Link>
 
@@ -67,11 +68,11 @@ export default function Header() {
 
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <a
-            href="tel:01519092777"
+            href="tel:01512037172"
             className="inline-flex h-11 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-900 transition hover:border-sky-200 hover:bg-sky-50"
           >
             <Phone className="h-4 w-4 text-sky-600" />
-            <span>0151 909 2777</span>
+            <span>0151 203 7172</span>
           </a>
 
           <a
@@ -94,7 +95,7 @@ export default function Header() {
 
         <div className="flex items-center gap-2 lg:hidden">
           <a
-            href="tel:01519092777"
+            href="tel:01512037172"
             className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-700 ring-1 ring-sky-100"
             aria-label="Call Pronto House Buyer"
           >
