@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Phone, X } from "lucide-react";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { Menu, Phone, MessageCircle, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { href: "/sell-my-house-fast", label: "Sell Fast" },
@@ -19,6 +20,11 @@ const whatsappHref =
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
 
   function closeMenu() {
     setMenuOpen(false);
@@ -72,8 +78,9 @@ export default function Header() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-11 items-center justify-center rounded-xl bg-emerald-600 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500"
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 text-sm font-semibold text-white shadow-sm shadow-emerald-600/20 transition hover:bg-[#1ebe5d]"
           >
+            <MessageCircle className="h-4 w-4" />
             WhatsApp
           </a>
 
@@ -135,8 +142,9 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-emerald-600 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 text-sm font-semibold text-white shadow-sm shadow-emerald-600/20 transition hover:bg-[#1ebe5d]"
             >
+              <MessageCircle className="h-4 w-4" />
               WhatsApp
             </a>
 
