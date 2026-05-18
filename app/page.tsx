@@ -17,8 +17,8 @@ import {
   Wrench,
 } from "lucide-react";
 
-const phoneNumber = "0151 909 2777";
-const phoneHref = "tel:01519092777";
+const phoneNumber = "0151 203 7172";
+const phoneHref = "tel:01512037172";
 const whatsappHref =
   "https://wa.me/447771252634?text=Hi%2C%20I%27m%20on%20the%20Pronto%20House%20Buyer%20homepage%20and%20would%20like%20a%20cash%20offer%20for%20my%20house.";
 
@@ -149,6 +149,19 @@ const reasons = [
   "You can choose a timescale that suits your situation",
 ];
 
+function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+    >
+      <path d="M16.04 3C8.87 3 3.04 8.78 3.04 15.89c0 2.27.6 4.49 1.74 6.44L3 29l6.86-1.78a13.1 13.1 0 0 0 6.18 1.55c7.17 0 13-5.78 13-12.89C29.04 8.78 23.21 3 16.04 3Zm0 23.6c-2.03 0-4.02-.54-5.75-1.55l-.41-.24-4.07 1.06 1.09-3.93-.27-.43a10.64 10.64 0 0 1-1.63-5.62c0-5.91 4.95-10.72 11.04-10.72s11.04 4.81 11.04 10.72S22.13 26.6 16.04 26.6Zm6.05-8.02c-.33-.16-1.96-.96-2.26-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.16-1.39-.51-2.65-1.63-.98-.87-1.64-1.94-1.83-2.27-.19-.33-.02-.51.14-.67.14-.14.33-.38.49-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.74-1.76-1.01-2.41-.27-.63-.54-.54-.74-.55h-.63c-.22 0-.57.08-.87.41-.3.33-1.14 1.1-1.14 2.68s1.17 3.11 1.33 3.32c.16.22 2.3 3.48 5.58 4.88.78.33 1.39.53 1.86.68.78.25 1.49.21 2.05.13.63-.09 1.96-.79 2.24-1.56.27-.77.27-1.43.19-1.56-.08-.14-.3-.22-.63-.38Z" />
+    </svg>
+  );
+}
+
 const sellerConcerns = [
   {
     title: "No public listing",
@@ -177,9 +190,9 @@ function ContactButtons({ dark = false }: { dark?: boolean }) {
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white shadow-sm transition hover:bg-emerald-500"
+        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white shadow-sm shadow-emerald-600/20 transition hover:bg-[#1ebe5d]"
       >
-        <MessageCircle className="h-4 w-4" />
+        <WhatsAppIcon className="h-4 w-4" />
         WhatsApp Us
       </a>
       <a
@@ -235,82 +248,129 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#EEF9FF] text-slate-950">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.18),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.85),transparent_34%)]" />
-        <div className="absolute left-1/2 top-0 h-full w-[640px] -translate-x-1/2 bg-white/35 opacity-70 [clip-path:polygon(50%_0,100%_100%,0_100%)]" />
+      <section className="relative overflow-hidden bg-[#F7FCFF] text-slate-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.10),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.95),transparent_38%)]" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="mx-auto max-w-5xl text-center">
-            <div className="mb-6 inline-flex rounded-full border border-sky-200 bg-white px-5 py-2 text-sm font-bold text-slate-900 shadow-sm">
-              Liverpool, Wirral & surrounding areas
-            </div>
+          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
+              <div className="mb-5 inline-flex rounded-full border border-sky-200 bg-white px-5 py-2 text-sm font-bold text-slate-900 shadow-sm">
+                Liverpool, Wirral & surrounding areas
+              </div>
 
-            <h1 className="mx-auto max-w-5xl text-4xl font-black tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
-              Sell your house fast for cash, without the usual stress
-            </h1>
+              <h1 className="max-w-3xl text-4xl font-black tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+                Sell your house with a local Liverpool buyer
+              </h1>
 
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
-              A simple alternative to the open market. No fees, no repairs, no viewings, and completion possible in as little as 14 days.
-            </p>
-
-            <form
-              action={startOffer}
-              className="mx-auto mt-8 flex max-w-xl flex-col gap-3 rounded-3xl border border-sky-300 bg-white p-4 shadow-2xl shadow-sky-300/40 ring-1 ring-white sm:flex-row sm:items-center"
-            >
-              <input
-                type="text"
-                name="postcode"
-                autoComplete="postal-code"
-                required
-                placeholder="Enter your postcode"
-                className="h-12 min-w-0 flex-1 rounded-2xl border border-sky-200 bg-white px-4 text-center text-base font-semibold text-slate-900 outline-none placeholder:text-slate-400 focus:border-sky-500 sm:text-left"
-              />
-              <button
-                type="submit"
-                className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#056C9F] px-6 text-sm font-black text-white transition hover:bg-[#034f75] sm:min-w-44"
-              >
-                Get My Cash Offer
-              </button>
-            </form>
-
-            <div className="mt-5 flex flex-col items-center justify-center gap-3 text-sm font-bold text-slate-700 sm:flex-row sm:gap-6">
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-emerald-700 transition hover:text-emerald-600"
-              >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp instead
-              </a>
-              <a
-                href={phoneHref}
-                className="inline-flex items-center gap-2 text-slate-950 transition hover:text-sky-700"
-              >
-                <Phone className="h-4 w-4 text-sky-500" />
-                Call {phoneNumber}
-              </a>
-            </div>
-          </div>
-
-          <div className="mx-auto mt-12 grid max-w-5xl gap-4 text-left md:grid-cols-3">
-            <div className="rounded-2xl border border-sky-200 bg-white/90 p-5 shadow-sm">
-              <div className="text-xl font-black text-[#0784C3]">24 hours</div>
-              <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">
-                Typical initial cash offer after we review the property details.
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
+                We buy houses directly across Liverpool, Wirral and the surrounding areas, giving sellers a clearer route than waiting on the open market.
               </p>
-            </div>
-            <div className="rounded-2xl border border-sky-200 bg-white/90 p-5 shadow-sm">
-              <div className="text-xl font-black text-[#0784C3]">14 days</div>
-              <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">
-                Completion possible where the legal process is straightforward.
+
+              <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
+                If the property is inherited, tenanted, needs work, or you want a private sale without viewings, we will give you a clear cash offer and a realistic timescale from the start.
               </p>
+
+              <div className="mt-8 rounded-3xl border border-sky-100 bg-white/85 p-5 shadow-sm">
+                <div className="text-sm font-black uppercase tracking-[0.18em] text-sky-600">
+                  Properties we consider
+                </div>
+
+                <div className="mt-4 grid gap-3 text-sm font-semibold text-slate-700 sm:grid-cols-2">
+                  {[
+                    "Inherited or probate properties",
+                    "Tenanted houses and landlord sales",
+                    "Properties needing repair or clearance",
+                    "Vacant houses or stalled estate agent sales",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-sky-500" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="rounded-2xl border border-sky-200 bg-white/90 p-5 shadow-sm">
-              <div className="text-xl font-black text-[#0784C3]">No fees</div>
-              <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">
-                No estate agent commission, no repairs, and no hidden charges from us.
-              </p>
+
+            <div className="relative">
+              <div className="absolute inset-0 rounded-[2rem] bg-sky-100/45 blur-3xl" />
+
+              <div className="relative overflow-hidden rounded-[2rem] border border-sky-100 bg-white shadow-2xl shadow-sky-100/80">
+                <div className="relative h-[280px] sm:h-[340px]">
+                  <Image
+                    src="/images/hero.jpg"
+                    alt="Local house buyer in Liverpool and Wirral"
+                    fill
+                    priority
+                    className="object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/55 to-slate-950/15" />
+
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+
+                    <h2 className="mt-4 max-w-md text-2xl font-black leading-tight drop-shadow-sm sm:text-3xl">
+                      A direct sale without the open-market delays
+                    </h2>
+
+                    <p className="mt-3 max-w-lg text-sm font-medium leading-6 text-white/90 drop-shadow-sm sm:text-base">
+                      No public listing, no repeated viewings, no estate agent chain, and no need to repair the property first.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-t border-sky-100 bg-white p-5 sm:p-6">
+                  <div className="text-center">
+                    <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
+                      Get your cash offer
+                    </div>
+
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      Enter your postcode and start with a quick, no-obligation review.
+                    </p>
+                  </div>
+
+                  <form
+                    action={startOffer}
+                    className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"
+                  >
+                    <input
+                      type="text"
+                      name="postcode"
+                      autoComplete="postal-code"
+                      required
+                      placeholder="Enter your postcode"
+                      className="h-12 min-w-0 flex-1 rounded-2xl border border-sky-200 bg-white px-4 text-center text-base font-semibold text-slate-900 outline-none placeholder:text-slate-400 focus:border-sky-500 sm:text-left"
+                    />
+
+                    <button
+                      type="submit"
+                      className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#056C9F] px-6 text-sm font-black text-white transition hover:bg-[#034f75] sm:min-w-44"
+                    >
+                      Get My Cash Offer
+                    </button>
+                  </form>
+
+                  <div className="mt-4 flex flex-col items-start justify-start gap-3 text-sm font-bold text-slate-700 sm:flex-row sm:items-center sm:gap-4">
+                    <a
+                      href={whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-2 text-sm font-bold text-white shadow-sm shadow-emerald-600/20 transition hover:bg-[#1ebe5d]"
+                    >
+                      <WhatsAppIcon className="h-4 w-4" />
+                      WhatsApp Us
+                    </a>
+
+                    <a
+                      href={phoneHref}
+                      className="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-sky-50 hover:text-sky-700"
+                    >
+                      <Phone className="h-4 w-4 text-sky-500" />
+                      Call {phoneNumber}
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -481,22 +541,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#EEF9FF] px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
-          <div>
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-              Quick local offer
+      <section className="bg-[#F7FCFF] px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-sky-100 bg-white p-5 shadow-sm sm:p-6">
+          <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
+                Quick local offer
+              </div>
+              <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                Want to check if your house qualifies?
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+                Enter your postcode and we will tell you quickly if a direct cash offer is realistic.
+              </p>
             </div>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              Want to check if your house qualifies?
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-              Send the postcode and a few details. We will tell you quickly if a direct cash offer is realistic for your property.
-            </p>
-          </div>
 
-          <div className="rounded-[1.5rem] bg-white p-4 shadow-sm ring-1 ring-sky-100">
-            <ContactButtons />
+            <div>
+              <form
+                action={startOffer}
+                className="flex flex-col gap-3 sm:flex-row sm:items-center"
+              >
+                <input
+                  type="text"
+                  name="postcode"
+                  autoComplete="postal-code"
+                  required
+                  placeholder="Enter your postcode"
+                  className="h-13 min-w-0 flex-1 rounded-2xl border border-sky-200 bg-white px-5 py-4 text-base font-semibold text-slate-900 outline-none placeholder:text-slate-400 focus:border-sky-500"
+                />
+
+                <button
+                  type="submit"
+                  className="inline-flex min-h-13 items-center justify-center rounded-2xl bg-[#056C9F] px-7 py-4 text-sm font-black text-white transition hover:bg-[#034f75] sm:min-w-[220px]"
+                >
+                  Get My Cash Offer
+                </button>
+              </form>
+
+              <div className="mt-4 flex flex-col gap-3 text-sm font-bold sm:flex-row sm:items-center sm:justify-start">
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-white transition hover:bg-[#1ebe5d]"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  WhatsApp Us
+                </a>
+
+                <a
+                  href={phoneHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-sky-200 bg-white px-4 py-2.5 text-slate-950 transition hover:bg-sky-50"
+                >
+                  <Phone className="h-4 w-4 text-sky-500" />
+                  Call {phoneNumber}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -751,19 +852,64 @@ export default function HomePage() {
       </section>
 
 
-      <section className="bg-slate-900">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-10 sm:px-6 md:py-12 lg:flex-row lg:items-center lg:px-8">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to sell your house fast?
-            </h2>
-            <p className="mt-3 max-w-2xl text-lg text-slate-300">
-              Get your no-obligation cash offer today. No fees, no repairs, no
-              viewings, and no pressure.
-            </p>
-          </div>
+      <section className="bg-slate-900 px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#07152B] p-5 shadow-xl shadow-black/20 sm:p-6">
+          <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">
+                Direct Liverpool buyer
+              </div>
+              <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                Ready to check your property?
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+                Enter your postcode and we will review whether a direct cash offer is realistic.
+              </p>
+            </div>
 
-          <ContactButtons dark />
+            <div>
+              <form
+                action={startOffer}
+                className="flex flex-col gap-3 sm:flex-row sm:items-center"
+              >
+                <input
+                  type="text"
+                  name="postcode"
+                  autoComplete="postal-code"
+                  required
+                  placeholder="Enter your postcode"
+                  className="h-13 min-w-0 flex-1 rounded-2xl border border-white/15 bg-white px-5 py-4 text-base font-semibold text-slate-900 outline-none placeholder:text-slate-400 focus:border-sky-400"
+                />
+
+                <button
+                  type="submit"
+                  className="inline-flex min-h-13 items-center justify-center rounded-2xl bg-[#056C9F] px-7 py-4 text-sm font-black text-white transition hover:bg-[#034f75] sm:min-w-[220px]"
+                >
+                  Get My Cash Offer
+                </button>
+              </form>
+
+              <div className="mt-4 flex flex-col gap-3 text-sm font-bold sm:flex-row sm:items-center sm:justify-start">
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-white transition hover:bg-[#1ebe5d]"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  WhatsApp Us
+                </a>
+
+                <a
+                  href={phoneHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-4 py-2.5 text-white transition hover:bg-white/10"
+                >
+                  <Phone className="h-4 w-4 text-sky-300" />
+                  Call {phoneNumber}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
